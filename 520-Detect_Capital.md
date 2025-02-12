@@ -33,20 +33,8 @@ using System.Text.RegularExpressions;
 
 public class Solution {
 
-    const string CapitalCase = "^[A-Z]+$";
-    const string LowerCase = "^[a-z]+$";
-    const string PascalCase = "^[A-Z]{1}[a-z]+$";
-
     public bool DetectCapitalUse(string word) {
 
-        if(Regex.Match(word, CapitalCase).Success)
-           return true;
-        if(Regex.Match(word, LowerCase).Success)
-           return true;
-        if(Regex.Match(word, PascalCase).Success)
-           return true;                      
-  
-        return false;
+       return Regex.Match(word, "^[A-Z]+$|^[a-z]+$|^[A-Z]{1}[a-z]+$").Success;
     }
-
 }```
